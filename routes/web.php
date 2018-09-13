@@ -15,19 +15,40 @@
 //     return view('welcome');
 // });
 
-Route::get('/',[
-    'as' => 'dashboard',
-    'uses' => 'DashboardController@index'
-]);
+// Route::get('/',[
+//     'as' => 'dashboard',
+//     'uses' => 'DashboardController@index'
+// ]);
 
 Auth::routes();
 
+
+
+// Route::get('/author/post', 'DashboardController@getPostForm')->name('post.form');
+
+// Route::post('/author/post', 'DashboardController@createPost')->name('post.form');
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/author/post', 'DashboardController@getPostForm')->name('post.form');
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::get('/post/create', [
+        'uses'=> 'PostsController@create' ,
+        'as'=> 'post.create'
+     ]
+     );
+     Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/author/post', 'DashboardController@createPost')->name('post.form');
 
-Auth::routes();
+     Route::Post('/post/store', [
+         'uses'=> 'PostsController@store',
+         'as'=> 'post.store'
+      ]
+      );
 
-Route::get('/home', 'HomeController@index')->name('home');
+});
+
+
+
+
