@@ -8,25 +8,23 @@ class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',200);
+            $table->string('title', 200);
             $table->text('content');
+            $table->string('slug');
             $table->integer('category_id');
             $table->string('featured');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

@@ -116,6 +116,7 @@
             @if(Session::has('info'))
                 toastr.info("{{ Session::get('info') }}")
             @endif
+           
     </script>
     <!-- @yield('scripts') -->
 </body>
