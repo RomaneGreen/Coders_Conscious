@@ -24,6 +24,16 @@ create new post
 </div>
 
 <div class="form-group">
+<label for="category" class="for">Select a category</label>
+<select name="category_id" id="category" class="form-control">
+    @foreach($categories as $category)
+    <option value="{{$category->id }}">{{ $category->name}}</option>
+    @endforeach
+</select>
+
+</div>
+
+<div class="form-group">
 <label for="title" class="for">Content</label>
 <textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>
 </div>
