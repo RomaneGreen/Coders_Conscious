@@ -11,20 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/',[
-//     'as' => 'dashboard',
-//     'uses' => 'DashboardController@index'
-// ]);
-
 Auth::routes();
-
-// Route::get('/author/post', 'DashboardController@getPostForm')->name('post.form');
-
-// Route::post('/author/post', 'DashboardController@createPost')->name('post.form');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -43,7 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
       );
 
     Route::get('/category/create', [
-         'uses' => 'CategoriesController@store',
+         'uses' => 'CategoriesController@create',
          'as' => 'category.create',
       ]
       );
@@ -52,4 +39,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
          'as' => 'category.store',
       ]
       );
+    Route::get('/categories', [
+        'uses' => 'CategoriesController@index',
+        'as' => 'categories',
+     ]
+     );
+    Route::get('/category/edit/{id}', [
+      'uses' => 'CategoriesController@edit',
+      'as' => 'category.edit',
+   ]
+   );
+    Route::get('/category/delete/{id}', [
+    'uses' => 'CategoriesController@destroy',
+    'as' => 'category.delete',
+ ]
+ );
+    Route::post('/category/update/{id}', [
+  'uses' => 'CategoriesController@update',
+  'as' => 'category.update',
+]
+);
 });
