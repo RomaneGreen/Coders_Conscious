@@ -22,33 +22,34 @@
 
 Auth::routes();
 
-
-
 // Route::get('/author/post', 'DashboardController@getPostForm')->name('post.form');
 
 // Route::post('/author/post', 'DashboardController@createPost')->name('post.form');
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/post/create', [
-        'uses'=> 'PostsController@create' ,
-        'as'=> 'post.create'
+        'uses' => 'PostsController@create',
+        'as' => 'post.create',
      ]
      );
-     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-
-     Route::Post('/post/store', [
-         'uses'=> 'PostsController@store',
-         'as'=> 'post.store'
+    Route::Post('/post/store', [
+         'uses' => 'PostsController@store',
+         'as' => 'post.store',
       ]
       );
 
+    Route::get('/category/create', [
+         'uses' => 'CategoriesController@store',
+         'as' => 'category.create',
+      ]
+      );
+    Route::post('/category/store', [
+         'uses' => 'CategoriesController@store',
+         'as' => 'category.store',
+      ]
+      );
 });
-
-
-
-
