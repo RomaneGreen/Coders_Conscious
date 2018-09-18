@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Session;
 use App\Post;
+use Session;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -16,6 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
+        return view('admin.posts.index')->with('posts', Post::all());
     }
 
     /**
