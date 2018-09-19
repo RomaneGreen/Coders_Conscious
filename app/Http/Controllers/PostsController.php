@@ -53,12 +53,12 @@ class PostsController extends Controller
         ]);
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
-        $featured->move('uploads/posts', $featured_new_name);
+        $featured->move('uploads/posts/', $featured_new_name);
 
         $post = Post::create([
             'title' => $request->title,
             'content' => $request->content,
-            'featured' => '/uploads/posts'.$featured_new_name,
+            'featured' => '/uploads/posts/'.$featured_new_name,
             'category_id' => $request->category_id,
             'slug' => str_slug($request->title),
         ]);
@@ -111,5 +111,12 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
+        $post = Post::find($id);
+
+        $post->delete();
+
+        Session::flash('sucess', 'Your post was just trashed');
+
+        return redirect()->back();
     }
 }

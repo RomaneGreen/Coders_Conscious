@@ -9,6 +9,12 @@ class Post extends Model
 {
     use SoftDeletes;
     protected $fillable = ['title', 'content', 'featured', 'category_id', 'slug'];
+
+    public function getFeaturedAttribute($featured)
+    {
+        return asset($featured);
+    }
+
     protected $dates = ['deleted_at'];
 
     public function catageory()
