@@ -20,8 +20,9 @@
     </th>
 
     <th>
-    Delete
+    Trash
     </th>
+    
     </thead>
     <tbody>
     @foreach($posts as $post)
