@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use App\Post;
 use Session;
 use App\Category;
@@ -33,7 +34,7 @@ class PostsController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.posts.create')->with('categories', $categories);
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', Tag::all());
     }
 
     /**
@@ -50,6 +51,7 @@ class PostsController extends Controller
             'featured' => 'required|image',
             'content' => 'required',
             'category_id' => 'required',
+            'tags' => 'required',
         ]);
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
@@ -63,6 +65,7 @@ class PostsController extends Controller
             'slug' => str_slug($request->title),
         ]);
 
+        $post->tags()->attach($request->tags);
         Session::flash('success', 'Post created sucessfully');
 
         return redirect()->back();

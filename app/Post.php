@@ -17,7 +17,7 @@ class Post extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function catageory()
+    public function categeory()
     {
         return $this->belongsTo('App\Categeory');
     }
