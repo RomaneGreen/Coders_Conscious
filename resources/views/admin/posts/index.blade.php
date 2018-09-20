@@ -34,8 +34,8 @@
     {{$post->title}}
     </td>
 
- <td>Edit</td>
-<td> <a href="{{ route('post.delete',['id'=>$post->id]) }}" class="btn btn-danger">Trash</a>
+ <td><a href="{{ route('post.edit',['id'=>$post->id]) }}" class="btn btn-sm btn-info">Edit</a></td>
+<td> <a href="{{ route('post.delete',['id'=>$post->id]) }}" class="btn btn-sm btn-danger">Trash</a>
 </td>
     </tr>
     @endforeach
