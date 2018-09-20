@@ -139,14 +139,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
       'as' => 'user.store',
     ]
     );
-    Route::get('/users/admin/{id}', [
+    Route::get('/user/admin/{id}', [
       'uses' => 'UsersController@admin',
       'as' => 'user.admin',
     ]
     )->middleware('admin');
-    Route::get('/users/not-admin/{id}', [
+    Route::get('/user/not-admin/{id}', [
       'uses' => 'UsersController@not_admin',
       'as' => 'user.not.admin',
+    ]
+    );
+    Route::get('/user/profile', [
+      'uses' => 'ProfilesController@index',
+      'as' => 'user.profile',
+    ]
+    );
+    Route::post('/user/profile/update', [
+      'uses' => 'ProfilesController@update',
+      'as' => 'user.profile.update',
     ]
     );
 });
