@@ -91,6 +91,12 @@
                                 <a href="{{ route('tags') }}">Tags</a>
                             </li>
                             <li class="list-group-item">
+                                <a href="{{ route('users') }}">Users</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('user.create') }}">New User</a>
+                            </li>
+                            <li class="list-group-item">
                                 <a href="{{ route('tag.create') }}">Create new Tags</a>
                             </li>
                             <li class="list-group-item">
@@ -100,15 +106,15 @@
                             <li class="list-group-item">
                                 <a href="{{ route('category.create') }}">Create new category</a>
                             </li>
-                            <li class="list-group-item">
+                             <li class="list-group-item">
                                 <a href="{{ route('post.create') }}">Create new post</a>
-                            <!-- </li>
-                            @if(Auth::user()->admin)
+                             </li>
+                         @if(Auth::user()->admin)
                                 <li class="list-group-item">
-                                    <a href="{{ route('settings') }}">Settings</a>
+                                     {{---<a href="{{ route('settings') }}">Settings</a>--}}
                                 </li>
-                            @endif
-                        </ul> -->
+                             @endif
+                        </ul> 
                     </div>
                 @endif
                 <div class="col-lg-8">
