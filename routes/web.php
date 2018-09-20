@@ -143,7 +143,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
       'uses' => 'UsersController@admin',
       'as' => 'user.admin',
     ]
-    );
+    )->middleware('admin');
     Route::get('/users/not-admin/{id}', [
       'uses' => 'UsersController@not_admin',
       'as' => 'user.not.admin',
