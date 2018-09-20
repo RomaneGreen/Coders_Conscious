@@ -37,7 +37,7 @@ create new post
     <label for="tags">Select tags</label>
         @foreach($tags as $tag)
         <div class="checkbox">
-     <label for=""><input type="checkbox" name="tags[]" id="" value= {{$tag->id}}> {{$tag->tag}}</label>
+     <label><input type="checkbox" name="tags[]" value= "{{$tag->id}}"> {{$tag->tag}}</label>
      </div>
         @endforeach
    
