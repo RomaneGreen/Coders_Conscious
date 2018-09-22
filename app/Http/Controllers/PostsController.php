@@ -27,14 +27,15 @@ class PostsController extends Controller
      */
     public function create()
     {
+        $tags = Tag::all();
         $categories = Category::all();
-        if ($categories->count() == 0) {
-            Session::flash('info', 'You must have categories before attempting to created a post');
+        if ($categories->count() == 0 || $tags->count() == 0) {
+            Session::flash('info', 'You must have categories or tags before attempting to created a post');
 
             return redirect()->back();
         }
 
-        return view('admin.posts.create')->with('categories', $categories)->with('tags', Tag::all());
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags);
     }
 
     /**

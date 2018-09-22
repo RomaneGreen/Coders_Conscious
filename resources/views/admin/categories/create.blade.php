@@ -25,3 +25,6 @@ Create new category
 </form>
 </div>
 @stop
+
+
+@stop
