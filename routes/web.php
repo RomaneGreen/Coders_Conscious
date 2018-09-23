@@ -15,13 +15,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/', [
+  'uses' => 'FrontEndController@index',
+  'as' => 'index',
+]);
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/post/create', [
         'uses' => 'PostsController@create',
         'as' => 'post.create',
      ]
      );
-    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::Post('/post/store', [
          'uses' => 'PostsController@store',

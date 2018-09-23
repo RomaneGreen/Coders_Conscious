@@ -27,4 +27,3 @@ Create new category
 @stop
 
 
-@stop
