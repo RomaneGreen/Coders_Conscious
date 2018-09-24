@@ -2,13 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'content', 'featured', 'category_id', 'slug', 'user_id'];
+    protected $fillable = [
+        'title', 'content', 'category_id', 'featured', 'slug', 'user_id',
+    ];
 
     public function getFeaturedAttribute($featured)
     {
@@ -22,6 +24,7 @@ class Post extends Model
         return $this->belongsTo('App\Category');
     }
 
+    // tags , posts === tag, post === post_tag
     public function tags()
     {
         return $this->belongsToMany('App\Tag');

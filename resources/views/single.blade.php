@@ -14,7 +14,7 @@
                         <div class="col-lg-10 col-lg-offset-1">
                         <article class="hentry post post-standard-details">
 
-                              <div class="post-thumb">
+                              <div class="post-thumb aligh-center">
                                     <img src="{{ $post->featured }}" alt="seo">
                               </div>
 
@@ -27,7 +27,7 @@
                                                 Posted by
 
                                                 <div class="post__author-name fn">
-                                                      <a href="#" class="post__author-link">Admin</a>
+                                                      <a href="#" class="post__author-link">{{$uza->name}}</a>
                                                 </div>
 
                                           </div>
@@ -73,22 +73,22 @@
                         <div class="blog-details-author">
 
                               <div class="blog-details-author-thumb">
-                                    <img src="{{ asset($post->user->profile->avatar) }}" alt="Author">
+                                    <img src="{{asset($uza->profile->avatar)}}" alt="Author" style="height:50px;width:50px;">
                               </div>
 
                               <div class="blog-details-author-content">
                                     <div class="author-info">
-                                    <h5 class="author-name">{{ $post->user->name }}</h5>
+                                    <h5 class="author-name">{{ $post->user['name'] }}</h5>
                                     </div>
-                                    <p class="text">{{ $post->user->profile->about }}
+                                    <p class="text">{{ $profile->about }}
                                     </p>
                                     <div class="socials">
 
-                                    <a href="{{ $post->user->profile->facebook }}" class="social__item" target="_blank">
+                                    <a href="{{ $profile->facebook }}" class="social__item" target="_blank">
                                           <img src="{{ asset('app/svg/circle-facebook.svg') }}" alt="facebook">
                                     </a>
 
-                                    <a href="{{ $post->user->profile->youtube }}" class="social__item" target="_blank">
+                                    <a href="{{ $profile->youtube }}" class="social__item" target="_blank">
                                           <img src="{{ asset('app/svg/youtube.svg') }}" alt="youtube">
                                     </a>
 

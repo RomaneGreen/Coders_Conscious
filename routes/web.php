@@ -19,8 +19,6 @@ Route::post('/subscribe', function () {
     return redirect()->back();
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/', [
   'uses' => 'FrontEndController@index',
   'as' => 'index',
@@ -35,6 +33,12 @@ Route::get('/', [
                           ->with('categories', \App\Category::take(5)->get())
                           ->with('query', request('query'));
   });
+
+  Route::get('/dashboard', [
+    'uses' => 'HomeController@index',
+    'as' => 'home',
+]);
+
 Route::get('/post/{slug}', [
 'uses' => 'FrontEndController@singlePost',
 'as' => 'post.single',
