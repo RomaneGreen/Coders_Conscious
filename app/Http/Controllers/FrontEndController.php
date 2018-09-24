@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\User;
 use App\Tag;
 use App\Post;
@@ -42,6 +43,8 @@ class FrontEndController extends Controller
                              ->with('tags', Tag::all())
                              ->with('uza', User::find(1))
                 ->with('profile', Profile::first());
+
+        // Session::flash('success', 'category');
     }
 
     public function category($id)
