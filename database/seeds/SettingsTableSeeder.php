@@ -10,7 +10,7 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         App\Setting::Create([
-            'site_name' => 'Romane WEBRG',
+            'site_name' => 'Coders Conscious',
             'contact_number' => '646-272-9312',
             'contact_email' => 'romane71193@gmail.com',
             'address' => 'New York,NY',

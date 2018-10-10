@@ -18,9 +18,9 @@ class UsersTableSeeder extends Seeder
         App\Profile::Create([
             'user_id' => $user->id,
             'avatar' => 'uploads/avatars/1.png',
-            'about' => 'Lorem10',
-            'facebook' => 'facebook.com',
-            'youtube' => 'Youtube.com',
+            'about' => 'Romane G a developer and blogger',
+            'facebook' => 'https://www.facebook.com/',
+            'youtube' => 'https://www.youtube.com/',
         ]);
     }
 }

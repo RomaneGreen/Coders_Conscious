@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="subscribe scrollme">
                         <div class="col-lg-6 col-lg-offset-5 col-md-6 col-md-offset-5 col-sm-12 col-xs-12">
-                            <h4 class="subscribe-title">Email Newsletters!</h4>
+                            <h4 class="subscribe-title">Join my Emailing list !</h4>
                             <form class="subscribe-form" method="post" action="/subscribe">
                                   @csrf 
                                 <input class="email input-standard-grey input-white" name="email" placeholder="Your Email Address..." type="email">
@@ -12,7 +12,7 @@
                                     <span class="semicircle--right"></span>
                                 </button>
                             </form>
-                            <div class="sub-title">Sign up for new content, updates, surveys & offers.</div>
+                            <div class="sub-title">Sign up for notifications when new articles,reviews and tutorials are released .</div>
     
                         </div>
     

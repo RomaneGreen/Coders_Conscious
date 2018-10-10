@@ -9,11 +9,7 @@
                                 <span class="short-line"></span>
                                 <span class="long-line"></span>
                             </div>
-                            <p class="heading-text">Qolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibham
-                                liber tempor cum soluta nobis eleifend option congue nihil uarta decima et quinta.
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                                ut aliquip ex ea commodo consequat eleifend option nihil. Investigationes demonstraverunt
-                                lectores legere me lius quod ii legunt saepius parum claram.
+                            <p class="heading-text">Your Source for up-to-date news,articles and tutorials related to web development.
                             </p>
                         </div>
                     </div>
@@ -30,7 +26,7 @@
                             </div>
                             <div class="content">
                                 <a href="#" class="title">{{$settings->contact_number}}</a>
-                                <p class="sub-title">Mon-Fri 9am-6pm</p>
+                                <p class="sub-title">Support line</p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +38,7 @@
                             </div>
                             <div class="content">
                                 <a href="#" class="title">{{$settings->contact_email}}</a>
-                                <p class="sub-title">online support</p>
+                                <p class="sub-title">For special comments,questions and Inquires</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +50,7 @@
                             </div>
                             <div class="content">
                                 <a href="#" class="title">{{$settings->address}}</a>
-                                <p class="sub-title">795 South Park Avenue</p>
+                                <p class="sub-title">On site - Location</p>
                             </div>
                         </div>
                     </div>
