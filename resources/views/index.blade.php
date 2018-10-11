@@ -122,7 +122,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center ">
-                                        <a href="{{ route('post.single',['slug'=> $second_post->slug]) }}">{{$second_post->category->name}}</a>
+                                        <a href="{{ route('post.single',['slug'=> $second_post->slug]) }}">{{$second_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
