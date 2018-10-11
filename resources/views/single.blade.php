@@ -73,7 +73,7 @@
                         <div class="blog-details-author">
 
                               <div class="blog-details-author-thumb">
-                                    <img src="{{asset($uza->profile->avatar)}}" alt="Author" style="height:50px;width:50px;">
+                                    <img src="/favicon.png" alt="Author" style="height:50px;width:50px;">
                               </div>
 
                               <div class="blog-details-author-content">
