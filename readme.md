@@ -7,7 +7,7 @@
 
 ## What is codersconscious?
 
-[codersconscious.com](https://codersconscious.com)  is a dynamic blog with where articles,reviews and tutorials. We value keeping in the know. Topics expand from beginner to adavanced level content, up to date News and Reviews.
+[codersconscious.com](https://codersconscious.com)  is a dynamic blog with  articles,reviews and tutorials in relation to web development. We value keeping in the know. Topics expand from beginner to adavanced level content, up to date News and Reviews.
 
 ## Contributing
 
